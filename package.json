@@ -1,0 +1,28 @@
+{
+  "name": "salo",
+  "version": "0.0.2",
+  "description": "JSONify errors",
+  "main": "index.js",
+  "node" : ">=6.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Taras Labiak <kissarat@gmail.com>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "lodash": "^4.16.4"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kissarat/salo.git"
+  },
+  "keywords": [
+    "error",
+    "json"
+  ],
+  "bugs": {
+    "url": "https://github.com/kissarat/salo/issues"
+  },
+  "homepage": "https://github.com/kissarat/salo#readme"
+}
