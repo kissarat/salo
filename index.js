@@ -1,5 +1,3 @@
-// const {pick} = require('lodash')
-
 function salo(err) {
   const c = {
     name: err.name,
@@ -16,9 +14,22 @@ function salo(err) {
   return c
 }
 
-salo.express = function (res) {
+salo.express = function (res, statusCode) {
   return function (err) {
-    res.json(salo(err))
+    err = salo(err)
+    res
+      .status(statusCode || 500)
+      .json(err)
+  }
+}
+
+salo.http = function (res, statusCode) {
+  return function (err) {
+    err = salo(err)
+    res.writeHead(statusCode || 500, {
+      'content-type': 'application/json; charset=utf-8'
+    })
+    res.end(JSON.stringify(err))
   }
 }
 

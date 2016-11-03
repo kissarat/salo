@@ -1,18 +1,18 @@
 {
   "name": "salo",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "JSONify errors",
   "main": "index.js",
-  "node" : ">=6.0.0",
+  "node" : ">=4.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Taras Labiak <kissarat@gmail.com>",
   "license": "GPL-3.0",
   "dependencies": {
-    "lodash": "^4.16.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kissarat/salo.git"
