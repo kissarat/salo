@@ -1,4 +1,5 @@
 function salo(err) {
+  console.error(err)
   const c = {
     name: err.name,
     message: err.message,
