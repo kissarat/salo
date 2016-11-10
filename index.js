@@ -2,16 +2,21 @@ function salo(err) {
   console.error(err)
   const c = {
     name: err.name,
-    message: err.message,
-    stack: err.stack
+    message: err.message
+  };
+  if ('string' === typeof err.stack) {
+    c.stack = err.stack
       .replace(/\s+at\s+/g, '{#}at ')
       .split('{#}')
-  };
+  }
   ['code', 'response', 'constraint'].forEach(function (name) {
     if (err[name]) {
       c[name] = err[name]
     }
   })
+  for(var key in err) {
+    c[key] = err[key]
+  }
   return c
 }
 

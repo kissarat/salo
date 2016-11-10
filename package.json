@@ -1,6 +1,6 @@
 {
   "name": "salo",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "JSONify errors",
   "main": "index.js",
   "node" : ">=4.0.0",
