@@ -1,4 +1,9 @@
-const config = {};
+const config = {
+  mongo: {
+    url: "mongodb://localhost/salo",
+    useNewUrlParser: true
+  }
+};
 
 try {
   const local = require('./config.local');

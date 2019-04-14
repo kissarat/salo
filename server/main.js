@@ -4,11 +4,16 @@ const express = require("express");
 const pkg = require("../package");
 // const controllers = require('./controllers');
 const path = require("path");
+const mongoose = require('mongoose');
+const models = require('./models');
 
 const STATIC_DIR = path.resolve(__dirname + "/../client/public");
 
 function main(options = {}) {
   options.port = +options.port || 8080;
+  mongoose.connect(options.mongo.url, {
+    useNewUrlParser: options.mongo.useNewUrlParser || true
+  });
   return new Promise(function (resolve, reject) {
     try {
       const app = express();
