@@ -85,7 +85,7 @@ ssl
 .terraform
 *.tfstate.backup
 config.local.js*
-public/app.js
+client/public/app.js
 
 
 ############################

@@ -1,7 +1,9 @@
 const webpack = require("webpack");
 
+const mode = process.env.NODE_ENV || "development";
+
 module.exports = {
-  mode: "development",
+  mode,
   entry: __dirname + "/src/main.jsx",
   devtool: "eval-source-map",
   output: {
@@ -10,7 +12,10 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.SourceMapDevToolPlugin()
+    new webpack.SourceMapDevToolPlugin(),
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': mode
+      })
   ],
 
   module: {
