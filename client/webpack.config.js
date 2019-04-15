@@ -13,9 +13,10 @@ module.exports = {
 
   plugins: [
     new webpack.SourceMapDevToolPlugin(),
-      new webpack.DefinePlugin({
-        'process.env.NODE_ENV': mode
-      })
+    new webpack.EnvironmentPlugin({
+      NODE_ENV: mode,
+      DEBUG: "production" !== mode
+    })
   ],
 
   module: {
