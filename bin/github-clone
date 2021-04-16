@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 GITHUB_PROJECT_SSH_URI=$1
 GITHUB_USER=$(echo $GITHUB_PROJECT_SSH_URI | sed 's/[\/.]/:/g' | cut -d: -f3)

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Get summary for pip packages
+# . pip-summary.sh requirements.txt
+
+for package in $(cat $1 | sort); do
+    if `pip3 install -q --no-deps $package`; then
+        package_name=$(echo $package | sed -e 's/==.*//g')
+        pip3 show $package_name \
+        | awk -v name=Summary 'BEGIN { FS=":" } (name == $1) { print $2 }' \
+        | echo "$package_name:" $(cat)
+    fi
+done
