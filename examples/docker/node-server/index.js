@@ -17,9 +17,7 @@ const server = http.createServer(function(req, res) {
             platform: os.platform(),
             uptime: os.uptime()
         },
-        node: {
-            version: process.version
-        },
+        versions: process.versions,
         env: process.env
     }))
 })
