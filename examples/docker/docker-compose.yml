@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+    node:
+        container_name: alpine_node
+        image: alpine_node
+        build: .
+        ports:
+            - 3000:3000
+        hostname: alpine-node.local
+        volumes:
+            - ./node-server:/srv
+
+networks:
+    alpine_node:
+        external: true
